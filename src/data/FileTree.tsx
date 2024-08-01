@@ -11,7 +11,7 @@ export const fileTree: IFile = {
         {
           name: ".bin",
           isFolder: true,
-          children: [{ name: "acorn.cmd", isFolder: false }],
+          children: [{ name: "acorn.tsx", isFolder: false }],
         },
       ],
     },
