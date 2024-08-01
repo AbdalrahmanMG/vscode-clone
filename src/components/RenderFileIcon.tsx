@@ -1,4 +1,6 @@
+import { extensionIconPaths } from "../constants";
 import IconImg from "./IconImg";
+import FileIcon from "./icons/FileIcon";
 
 interface IProps {
   filename: string;
@@ -7,16 +9,16 @@ interface IProps {
 }
 
 const RenderFileIcon = ({ filename, isOpen, isFolder }: IProps) => {
-  const extention = filename.split(".").pop();
-  console.log(extention);
+  const extension = filename.split(".").pop();
 
-  //* files
-  if (extention === "html") return <IconImg src="/public/icons/html.svg" />;
-  if (extention === "tsx") return <IconImg src="/public/icons/react_ts.svg" />;
+  if (extension && Object.prototype.hasOwnProperty.call(extensionIconPaths, extension)) {
+    const iconPath = isFolder ? (isOpen ? `${extensionIconPaths[extension]}-open.svg` : `${extensionIconPaths[extension]}.svg`) : `${extensionIconPaths[extension]}.svg`;
+    return <IconImg src={iconPath} />;
+  }
 
-  // * folders
-  if (extention === "node_modules" && isFolder) return isOpen ? <IconImg src="/public/icons/folder-node-open.svg" /> : <IconImg src="/public/icons/folder-node.svg" />;
   if (isFolder) return isOpen ? <IconImg src="/public/icons/folder-resolver-open.svg" /> : <IconImg src="/public/icons/folder-resolver.svg" />;
+
+  return <FileIcon/>
 };
 
 export default RenderFileIcon;

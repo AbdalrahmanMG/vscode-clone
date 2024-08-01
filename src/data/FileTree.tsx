@@ -13,6 +13,11 @@ export const fileTree: IFile = {
           isFolder: true,
           children: [{ name: "acorn.tsx", isFolder: false }],
         },
+        {
+          name: "text.txt",
+          isFolder: false,
+          content: "anything",
+        },
       ],
     },
     {
