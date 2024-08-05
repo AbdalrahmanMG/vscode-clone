@@ -1,4 +1,4 @@
-import { useSelector } from "react-redux";
+import {  useSelector } from "react-redux";
 import { RootState } from "../app/store";
 import OpenedFilesTab from "./OpenedFilesTab";
 import ContextMenu from "./ui/ContextMenu";
@@ -8,6 +8,7 @@ const OpenedFileBar = () => {
   const { openedFiles } = useSelector((state: RootState) => state.tree);
   const [menuPositions, setMenuPositions] = useState<{ x: number; y: number }>({ x: 0, y: 0 });
   const [showMenu, setShowMenu] = useState<boolean>(false);
+
 
   const handleContextMenu = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     e.preventDefault();
