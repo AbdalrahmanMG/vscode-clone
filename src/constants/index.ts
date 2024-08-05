@@ -12,7 +12,7 @@ export const extensionIconPaths: Record<string, string> = {
   yml: " /icons/yaml",
   yaml: " /icons/yaml",
   xml: " /icons/xml",
-  txt: " /icons/text",
+  txt: " /icons/file-svgrepo-com",
   png: " /icons/image",
   jpg: " /icons/image",
   jpeg: " /icons/image",

@@ -1,12 +1,10 @@
 import { ChangeEvent, FormEvent, useState } from "react";
 import FileIcon from "./icons/FileIcon";
-import { useSelector } from "react-redux";
-import { RootState } from "../app/store";
+
 
 const AddFileInput = () => {
   const [inputValue, setInputValue] = useState<string>("");
 
-  // const {sideBarFiles} = useSelector((state: RootState)=> state.side)
 
   //* handlers
   const handleInputValue = (e: ChangeEvent<HTMLInputElement>) => {

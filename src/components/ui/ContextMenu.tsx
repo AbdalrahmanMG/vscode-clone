@@ -22,6 +22,7 @@ const ContextMenu = ({ positions: { x, y }, setShowMenu }: IProps) => {
         setShowMenu(false);
       }
     };
+    
     window.addEventListener("click", handleClickOutside);
 
     return () => {
