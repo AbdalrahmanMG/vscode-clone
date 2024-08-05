@@ -1,16 +1,24 @@
 import RecursiveComponent from "./components/RecursiveComponent";
 import { fileTree } from "./data/FileTree";
-import OpenedFileBar from "./components/OpenedFileBar";
+import ResizablePanals from "./components/ResizablePanals";
+import Preview from "./components/Preview";
 
 function App() {
   return (
     <div className="flex h-screen">
-      <div className="w-60 border-r p-2 border-b-[1px] border-[#c9c9c983]">
-        <RecursiveComponent fileTree={fileTree} />
-      </div>
-      <div className="flex-grow">
-        <OpenedFileBar />
-      </div>
+      <ResizablePanals
+        showLeftPanel={true}
+        leftPanel={
+          <div className="w-60 p-2 ">
+            <RecursiveComponent fileTree={fileTree} />
+          </div>
+        }
+        rightPanel={
+          <div className="flex-grow">
+            <Preview />
+          </div>
+        }
+      />
     </div>
   );
 }

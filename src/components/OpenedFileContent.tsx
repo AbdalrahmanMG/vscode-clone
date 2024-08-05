@@ -3,7 +3,7 @@ import SyntaxHighlighter from 'react-syntax-highlighter';
 import { atomOneLight } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
 interface IProps {
-content: string
+content: string | undefined
 }
 
 const OpenedFileContent = ({content}: IProps) => {

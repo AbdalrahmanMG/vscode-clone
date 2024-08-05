@@ -4,6 +4,7 @@ import CloseIcon from "./icons/CloseIcon";
 import RenderFileIcon from "./RenderFileIcon";
 import { setClickedFiles, setOpenedFiles } from "../app/features/FileTreeSlice";
 import { RootState } from "../app/store";
+import { memo } from "react";
 
 interface IProps {
   file: IFile;
@@ -24,7 +25,13 @@ const OpenedFilesTab = ({ file }: IProps) => {
   const handleClick = (e: React.MouseEvent<HTMLSpanElement, MouseEvent>) => {
     e.stopPropagation();
     const filteredTabs = openedFiles.filter((f) => f.id !== file.id);
-    const { id, name, content } = filteredTabs[filteredTabs.length - 1];
+    const lastTab = filteredTabs[filteredTabs.length - 1];
+    if (!lastTab) {
+      disptach(setOpenedFiles([]));
+      disptach(setClickedFiles({ filename: "", fileContent: "", activeId: null }));
+      return;
+    }
+    const { id, name, content } = lastTab;
     disptach(setOpenedFiles(filteredTabs));
     disptach(setClickedFiles({ filename: name, fileContent: content, activeId: id }));
   };
@@ -40,4 +47,4 @@ const OpenedFilesTab = ({ file }: IProps) => {
   );
 };
 
-export default OpenedFilesTab;
+export default memo(OpenedFilesTab);
