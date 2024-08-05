@@ -16,7 +16,7 @@ const RenderFileIcon = ({ filename, isOpen, isFolder }: IProps) => {
     return <IconImg src={iconPath} />;
   }
 
-  if (isFolder) return isOpen ? <IconImg src="/public/icons/folder-resolver-open.svg" /> : <IconImg src="/public/icons/folder-resolver.svg" />;
+  if (isFolder) return isOpen ? <IconImg src="/icons/folder-resolver-open.svg" /> : <IconImg src="/icons/folder-resolver.svg" />;
 
   return <FileIcon/>
 };

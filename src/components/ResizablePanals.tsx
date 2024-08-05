@@ -17,7 +17,8 @@ const ResizablePanals = ({ defaultLayout = [33, 67], rightPanel, leftPanel, show
     <PanelGroup direction="horizontal" onLayout={onLayout} autoSaveId={'condition'}>
       {showLeftPanel && (
         <>
-          <Panel defaultSize={defaultLayout[0]} collapsible={true}>{leftPanel}</Panel>
+          <Panel defaultSize={defaultLayout[0]} collapsible={true}
+           collapsedSize={0} minSize={10}>{leftPanel}</Panel>
         </>
       )}
       <PanelResizeHandle className="border-r-2 border-[#c9c9c983]" />

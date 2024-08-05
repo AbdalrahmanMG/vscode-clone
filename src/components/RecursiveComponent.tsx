@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { setClickedFiles, setOpenedFiles } from "../app/features/FileTreeSlice";
 import { RootState } from "../app/store";
 import { doesFileObjExist } from "../utils/functions";
+import AddFileInput from "./AddFileInput";
 
 interface IProps {
   fileTree: IFile;
@@ -30,7 +31,7 @@ const RecursiveComponent = ({ fileTree }: IProps) => {
   }
 
   return (
-    <div className="mb-2 ml-2">
+    <div className="mb-2 ml-2 min-w-40">
       <div className="flex items-center">
         {isFolder ? (
           <div className="flex items-center cursor-pointer" onClick={toggleOpen}>
@@ -50,6 +51,7 @@ const RecursiveComponent = ({ fileTree }: IProps) => {
         )}
       </div>
       {open && children && children.map((file, idx) => <RecursiveComponent key={idx} fileTree={file} />)}
+      <AddFileInput/>
     </div>
   );
 };

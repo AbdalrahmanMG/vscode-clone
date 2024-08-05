@@ -16,7 +16,7 @@ const Preview = () => {
         </>
       ) : (
         <div className="h-screen w-full flex justify-center items-center ">
-          <IconImg src="../../public/icons/vscode.svg" className=" w-1/3" />
+          <IconImg src="icons/vscode.svg" className=" w-1/3" />
         </div>
       )}
     </div>

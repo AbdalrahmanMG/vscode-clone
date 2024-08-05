@@ -1,10 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit'
 import fileTreeSlice from "./features/FileTreeSlice";
+import sideFiles from "./features/sideBarFilesSlice";
 
 
 export const store = configureStore({
   reducer: {
-    tree: fileTreeSlice
+    tree: fileTreeSlice,
+    side: sideFiles
   },
 })
 
